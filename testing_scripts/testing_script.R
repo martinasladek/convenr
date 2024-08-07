@@ -78,3 +78,38 @@ compile_canvas_data <- function(course_id, assign_id){
 }
 
 canvas_data <- compile_canvas_data(course_id = course_id, assign_id = "130992")
+
+
+set_canvas_variable <- function(){
+
+  scope = c("user", "project")
+  path <- usethis:::scoped_path_r(scope, ".Renviron", envvar = "R_ENVIRON_USER")
+  environ_lines <- readLines(path)
+
+  if(any(grepl("CANVAS_TOKEN", environ_lines) == TRUE)){
+    repeat {
+      user_input <- readline("You already have a variable in your \n.Renviron file called 'CANVAS_TOKEN'.\nDo you want to overwrite this token?")
+      # Check the user input and act accordingly
+      if (tolower(user_input) == "y") {
+        print("Continuing...")
+        break  # Exit the loop and continue with the script
+      } else if (tolower(user_input) == "n") {
+        print("Exiting...")
+        message("Press 'y' to continue.")
+      } else {
+        print("Invalid input. Please enter 'y' or 'n'.")
+      }
+    }
+  }
+
+
+
+
+# check whether you already have enviromental variables
+
+  # if exists, ask user whether to overwrite or stop
+
+
+}
+
+set_canvas_variable()
