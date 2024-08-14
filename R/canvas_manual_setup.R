@@ -3,7 +3,8 @@
 #'
 #' Edits the user's .Renviron file with new or updated environ variables and sets these for use with Canvas.
 #'
-#' @return
+#'
+#' @return Sets .Renviron variables and runs [canvas_setup()] to communicate with Canvas
 #' @export
 #'
 #' @examples

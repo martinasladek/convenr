@@ -1,11 +1,15 @@
 #' Get a list of students on a module/course
 #'
-#' @param course_id
+#' @param course_id The Canvas ID number for the course/module
 #'
-#' @return
+#' @return A tibble of student information from Canvas
 #' @export
 #'
 #' @examples
+#'  \dontrun{
+#'  get_students(course_id = 12345)
+#' }
+#'
 get_students <- function(course_id) {
 
   students <- rcanvas:::canvas_query(

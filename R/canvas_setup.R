@@ -1,6 +1,5 @@
 #' Set up access to Canvas
 #'
-#' @param domain Canvas url (string)
 #'
 #' @return Grants canvas access
 #' @export

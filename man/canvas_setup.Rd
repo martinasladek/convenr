@@ -4,10 +4,7 @@
 \alias{canvas_setup}
 \title{Set up access to Canvas}
 \usage{
-canvas_setup(domain = "https://canvas.sussex.ac.uk")
-}
-\arguments{
-\item{domain}{Canvas url (string)}
+canvas_setup()
 }
 \value{
 Grants canvas access

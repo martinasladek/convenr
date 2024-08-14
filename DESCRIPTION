@@ -16,8 +16,7 @@ Imports:
     httr,
     jsonlite,
     purrr,
-    rcanvas,
     shiny,
     shinydashboard,
-    tidyr
+    usethis
 Remotes: daranzolin/rcanvas  

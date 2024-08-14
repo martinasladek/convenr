@@ -1,0 +1,4 @@
+## Next Time on Coding Club
+## Decide what to do about counts in assign_marks_processing
+## What should be reactive and what should be stored directly?
+## Start to convert to interface

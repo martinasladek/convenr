@@ -4,14 +4,14 @@
 \alias{get_submissions}
 \title{Get submissions for an assignment}
 \usage{
-get_submissions(course_id, type, type_id)
+get_submissions(course_id, sub_type, sub_id)
 }
 \arguments{
 \item{course_id}{Canvas ID number for the course (unit).}
 
-\item{type}{Typo of submission. String. Possible values are "assignments" or "quizzes".}
+\item{sub_type}{Type of submission. String. Possible values are "assignments" or "quizzes".}
 
-\item{type_id}{Canvas ID number for the submission. String or numeric.}
+\item{sub_id}{Canvas ID number for the submission. String or numeric.}
 }
 \value{
 a tibble

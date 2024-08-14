@@ -6,7 +6,7 @@
 #' This interactive function guides the user through the creation (or updating, if they already exist) of two variables, CANVAS_TOKEN and CANVAS_DOMAIN. The function first checks if there are already variables defined in the local .Renviron file with these names, and gives the option to update them or not.
 #' Once both values are put in, the function then sets these for use with Canvas using [rcanvas::set_canvas_token()] and [rcanvas::set_canvas_domain()] respectively.
 #'
-#' @return
+#' @return Sets .Renviron variables and runs [canvas_setup()] to communicate with Canvas
 #' @export
 #'
 #' @examples
@@ -26,7 +26,7 @@ canvas_auto_setup <- function(){
   ## Check whether variable CANVAS_TOKEN already exists
   if(any(grepl("CANVAS_TOKEN", renv_lines) == TRUE)){
     message("You already have a 'CANVAS_TOKEN' in your .Renviron.")
-    token_resp <- menu(title = "Overwrite with new token?",
+    token_resp <- utils::menu(title = "Overwrite with new token?",
                       c("Yes, overwrite", "No, proceed without overwriting", "Abort"))
   } else {
     token_resp <- NA
@@ -54,7 +54,7 @@ canvas_auto_setup <- function(){
   ## Check whether variable CANVAS_DOMAIN already exists
   if(any(grepl("CANVAS_DOMAIN", renv_lines) == TRUE)){
     message("You already have a 'CANVAS_DOMAIN' in your .Renviron.")
-    domain_resp <- menu(title = "Overwrite with new domain?",
+    domain_resp <- utils::menu(title = "Overwrite with new domain?",
                       c("Yes, overwrite", "No, proceed without overwriting", "Abort"))
   } else {
     domain_resp <- NA
